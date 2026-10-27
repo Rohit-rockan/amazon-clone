@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#84d8e3" />
+  <title>Amazon Clone</title>
+  <link rel="stylesheet" href="css/styles.css?v=3" />
+</head>
+<body>
+  <div class="app">
+    <!-- Desktop header (shown ≥ 1024px) -->
+    <header class="dheader">
+      <div class="dnav">
+        <a href="#/" class="dlogo">amazon<span>.in</span></a>
+        <a href="#/you" class="dloc"><span class="dpin">📍</span><span><small id="dDeliverName">Deliver to Anshi</small><b id="dDeliverCity">New Delhi 110016</b></span></a>
+        <form class="dsearch" id="dSearchForm" autocomplete="off">
+          <select id="dSearchCat" aria-label="Search in"><option value="">All</option></select>
+          <input id="dSearchInput" type="search" placeholder="Search Amazon.in" aria-label="Search" />
+          <button type="submit" aria-label="Go">🔍</button>
+          <ul class="suggest" id="dSuggest" hidden></ul>
+        </form>
+        <div class="dlang">🇮🇳 <b>EN</b> ▾</div>
+        <a href="#/you" class="dlink"><small>Hello, <span id="dHello">Anshi</span></small><b>Account &amp; Lists ▾</b></a>
+        <a href="#/orders" class="dlink"><small>Returns</small><b>&amp; Orders</b></a>
+        <a href="#/cart" class="dcart"><span class="dcart-ico">🛒<b id="dCartCount">0</b></span><b>Cart</b></a>
+      </div>
+      <nav class="dsub" id="dSub"></nav>
+    </header>
+
+    <!-- Mobile header (shown < 1024px) -->
+    <header class="topbar" id="topbar">
+      <div class="topbar-row">
+        <button class="icon-btn back-btn" id="backBtn" aria-label="Back">&#8592;</button>
+        <a href="#/" class="logo">amazon<span>.in</span></a>
+        <div class="topbar-spacer"></div>
+        <a href="#/you" class="icon-btn" aria-label="Account">👤</a>
+      </div>
+      <form class="search" id="searchForm" autocomplete="off">
+        <span class="search-ico">🔍</span>
+        <input id="searchInput" type="search" placeholder="Search Amazon.in" aria-label="Search" />
+        <span class="search-ico">📷</span>
+        <span class="search-ico">🎤</span>
+        <ul class="suggest" id="suggest" hidden></ul>
+      </form>
+    </header>
+    <div class="deliver" id="deliverBar">📍 <span id="deliverText">Deliver to Anshi - New Delhi 110016</span> ▾</div>
+
+    <main id="view" class="view"></main>
+
+    <footer class="footer">
+      <a href="#" class="to-top" id="toTop">Back to top</a>
+      <div class="footer-cols">
+        <div><h4>Get to Know Us</h4><a>About Us</a><a>Careers</a><a>Press Releases</a><a>Science</a></div>
+        <div><h4>Connect with Us</h4><a>Facebook</a><a>Twitter</a><a>Instagram</a></div>
+        <div><h4>Make Money with Us</h4><a>Sell on Amazon</a><a>Become an Affiliate</a><a>Advertise Your Products</a><a>Amazon Pay on Merchants</a></div>
+        <div><h4>Let Us Help You</h4><a href="#/you">Your Account</a><a href="#/orders">Returns Centre</a><a>100% Purchase Protection</a><a>Help</a></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="dlogo">amazon<span>.in</span></div>
+        <p>Demo clone for learning purposes · Not affiliated with Amazon</p>
+      </div>
+    </footer>
+
+    <nav class="tabbar">
+      <a href="#/" data-tab="home"><span>🏠</span>Home</a>
+      <a href="#/you" data-tab="you"><span>👤</span>You</a>
+      <a href="#/cart" data-tab="cart" class="cart-tab"><span>🛒<b id="cartCount">0</b></span>Cart</a>
+      <a href="#/menu" data-tab="menu"><span>☰</span>Menu</a>
+    </nav>
+    <div class="toast" id="toast" hidden></div>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>

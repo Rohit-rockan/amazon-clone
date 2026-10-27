@@ -1,0 +1,93 @@
+// Catalog data for the clone. Images are emoji on tinted tiles so the app works fully offline.
+const CATEGORIES = [
+  { id: "mobiles", name: "Mobiles", icon: "📱", tint: "#e3f2fd" },
+  { id: "electronics", name: "Electronics", icon: "🎧", tint: "#ede7f6" },
+  { id: "fashion", name: "Fashion", icon: "👕", tint: "#fce4ec" },
+  { id: "home", name: "Home & Kitchen", icon: "🍳", tint: "#fff3e0" },
+  { id: "beauty", name: "Beauty", icon: "💄", tint: "#f3e5f5" },
+  { id: "books", name: "Books", icon: "📚", tint: "#e8f5e9" },
+  { id: "toys", name: "Toys & Games", icon: "🧸", tint: "#fffde7" },
+  { id: "grocery", name: "Fresh", icon: "🥦", tint: "#e0f2f1" },
+  { id: "sports", name: "Sports", icon: "🏏", tint: "#e1f5fe" },
+  { id: "appliances", name: "Appliances", icon: "🧺", tint: "#efebe9" },
+];
+
+// [title, brand, category, icon, price, mrp, rating, reviews, prime]
+const RAW = [
+  ["Galaxy Nova 5G (8GB RAM, 128GB Storage, Midnight Black)", "Samsung", "mobiles", "📱", 18999, 24999, 4.3, 18234, true],
+  ["Redmi Note Pro 5G (Aurora Blue, 8GB + 256GB)", "Redmi", "mobiles", "📱", 21999, 27999, 4.2, 9321, true],
+  ["iPhone 16 (128 GB) - Ultramarine", "Apple", "mobiles", "📱", 69900, 79900, 4.6, 5432, true],
+  ["OnePlus Nord CE 5 Lite 5G (Pastel Lime, 8GB, 128GB)", "OnePlus", "mobiles", "📱", 17999, 20999, 4.1, 22112, true],
+  ["realme narzo 80x 5G (Deep Ocean, 6GB+128GB)", "realme", "mobiles", "📱", 12499, 15999, 4.0, 7765, false],
+  ["Fast Charger 33W Type-C with Cable", "Portronics", "mobiles", "🔌", 599, 1499, 4.0, 15422, true],
+  ["boAt Rockerz 450 Bluetooth On-Ear Headphones", "boAt", "electronics", "🎧", 1299, 3990, 4.1, 302311, true],
+  ["Noise ColorFit Pro Smart Watch, 1.96\" AMOLED", "Noise", "electronics", "⌚", 2499, 6999, 4.0, 45122, true],
+  ["Fire TV Stick 4K with Alexa Voice Remote", "Generic", "electronics", "📺", 3999, 6499, 4.4, 220011, true],
+  ["Echo Pop Smart Speaker with Alexa (Charcoal)", "Generic", "electronics", "🔊", 3449, 5499, 4.3, 88320, true],
+  ["HP 15s Laptop, 13th Gen Intel Core i5, 16GB, 512GB SSD", "HP", "electronics", "💻", 52990, 66999, 4.2, 3102, true],
+  ["SanDisk Ultra 128GB microSDXC Memory Card", "SanDisk", "electronics", "💾", 849, 2400, 4.4, 312455, true],
+  ["Logitech M331 Silent Plus Wireless Mouse", "Logitech", "electronics", "🖱️", 799, 1295, 4.4, 61230, true],
+  ["Men's Regular Fit Cotton Casual Shirt", "Allen Solly", "fashion", "👔", 899, 1999, 4.0, 4521, true],
+  ["Women's Rayon Printed Straight Kurta", "Libas", "fashion", "👗", 549, 1799, 4.1, 21340, true],
+  ["Men's Running Shoes - Lightweight Mesh", "Campus", "fashion", "👟", 1199, 2499, 4.0, 33201, false],
+  ["Unisex Polarized Aviator Sunglasses", "Fastrack", "fashion", "🕶️", 799, 1499, 4.1, 8702, true],
+  ["Laptop Backpack 30L with USB Charging Port", "Wildcraft", "fashion", "🎒", 1349, 2999, 4.2, 12045, true],
+  ["Analog Men's Watch - Blue Dial", "Titan", "fashion", "⌚", 2795, 3495, 4.3, 6603, true],
+  ["Non-Stick Cookware Set, 3 Pieces", "Prestige", "home", "🍳", 1499, 2995, 4.2, 25110, true],
+  ["Stainless Steel Water Bottle 1L (Pack of 2)", "Milton", "home", "🍶", 699, 1220, 4.3, 54320, true],
+  ["Cotton Double Bedsheet with 2 Pillow Covers", "Bombay Dyeing", "home", "🛏️", 799, 1999, 4.0, 17321, false],
+  ["Electric Kettle 1.5L, 1500W", "Pigeon", "home", "🫖", 649, 1395, 4.1, 98002, true],
+  ["Smart LED Bulb 9W, Wi-Fi, 16M Colours", "Wipro", "home", "💡", 499, 1499, 4.1, 41200, true],
+  ["Vitamin C Face Serum 30ml", "Minimalist", "beauty", "🧴", 545, 599, 4.2, 66210, true],
+  ["Matte Liquid Lipstick - Long Lasting", "Maybelline", "beauty", "💄", 399, 699, 4.1, 23011, true],
+  ["Beard Trimmer with 40 Length Settings", "Philips", "beauty", "🪒", 1599, 2295, 4.3, 120233, true],
+  ["Sunscreen SPF 50 PA++++ 80g", "Lakmé", "beauty", "🧴", 349, 499, 4.2, 30120, false],
+  ["Atomic Habits - Paperback", "James Clear", "books", "📘", 449, 799, 4.7, 98123, true],
+  ["The Psychology of Money - Paperback", "Morgan Housel", "books", "📗", 299, 399, 4.6, 76330, true],
+  ["Ikigai: The Japanese Secret to a Long and Happy Life", "Héctor García", "books", "📙", 349, 599, 4.5, 55231, true],
+  ["Wooden Building Blocks Set, 100 Pieces", "Toyshine", "toys", "🧱", 699, 1499, 4.2, 5512, true],
+  ["Remote Control Racing Car, Rechargeable", "Mirana", "toys", "🏎️", 999, 2499, 3.9, 8820, false],
+  ["Classic Board Game - Family Edition", "Funskool", "toys", "🎲", 599, 899, 4.4, 14032, true],
+  ["Premium Basmati Rice 5kg", "India Gate", "grocery", "🍚", 649, 899, 4.3, 41023, true],
+  ["Organic Almonds 500g", "Happilo", "grocery", "🥜", 499, 799, 4.2, 22401, true],
+  ["Instant Coffee 200g Jar", "Nescafé", "grocery", "☕", 579, 650, 4.5, 60442, true],
+  ["English Willow Cricket Bat, Full Size", "SG", "sports", "🏏", 2199, 3499, 4.1, 3211, true],
+  ["Anti-Skid Yoga Mat 6mm with Strap", "Boldfit", "sports", "🧘", 449, 1299, 4.2, 70223, true],
+  ["Adjustable Dumbbells Set 20kg", "Kore", "sports", "🏋️", 1899, 3999, 4.0, 9100, false],
+  ["Front Load Washing Machine 7kg, Inverter", "LG", "appliances", "🧺", 29990, 40990, 4.4, 12011, true],
+  ["Double Door Refrigerator 340L, Frost Free", "Whirlpool", "appliances", "🧊", 36490, 45900, 4.2, 4021, true],
+  ["Air Fryer 4.2L, 1500W, Digital Touch", "Philips", "appliances", "🍟", 6999, 9995, 4.4, 33120, true],
+  ["Mixer Grinder 750W with 3 Jars", "Bajaj", "appliances", "🥤", 2799, 4300, 4.1, 50120, true],
+];
+
+const PRODUCTS = RAW.map((r, i) => {
+  const cat = CATEGORIES.find((c) => c.id === r[2]);
+  return {
+    id: "p" + (i + 1),
+    title: r[0],
+    brand: r[1],
+    category: r[2],
+    icon: r[3],
+    tint: cat.tint,
+    price: r[4],
+    mrp: r[5],
+    rating: r[6],
+    reviews: r[7],
+    prime: r[8],
+    bought: Math.round(r[7] / 40 / 100) * 100 || 50,
+    deal: i % 4 === 0,
+    bullets: [
+      `Genuine ${r[1]} product with brand warranty`,
+      "Free delivery on eligible orders and easy 7-day replacement",
+      "Pay on delivery and UPI available at checkout",
+      "Top rated by customers for quality and value",
+    ],
+  };
+});
+
+const BANNERS = [
+  { title: "Great Indian Festival", sub: "Up to 80% off · Bank offers", bg: "linear-gradient(135deg,#ffb84d,#ff6f3c)", icon: "🎉", link: "#/search?deal=1" },
+  { title: "Smartphones from ₹6,999", sub: "Latest 5G launches", bg: "linear-gradient(135deg,#3a7bd5,#00d2ff)", icon: "📱", link: "#/search?cat=mobiles" },
+  { title: "Home makeover", sub: "Kitchen & decor under ₹999", bg: "linear-gradient(135deg,#11998e,#38ef7d)", icon: "🏡", link: "#/search?cat=home" },
+  { title: "Fashion sale", sub: "Min. 50% off top brands", bg: "linear-gradient(135deg,#ee0979,#ff6a00)", icon: "🛍️", link: "#/search?cat=fashion" },
+];
