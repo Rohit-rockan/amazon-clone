@@ -6,6 +6,8 @@ vanilla JavaScript** — no frameworks, no libraries, no build step.
 It shows a full **desktop website** layout on wide screens and switches to a
 **mobile app** layout (bottom tab bar, teal header) on phones.
 
+**Live demo:** https://rohit-rockan.github.io/amazon-clone/
+
 > Learning project. Not affiliated with Amazon. See [NOTICE.md](NOTICE.md).
 
 ## Features
